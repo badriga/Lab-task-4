@@ -1,0 +1,351 @@
+##Predefined functions
+#length of a string
+print(len("project"))
+print(max(30,20,50))
+print(min(40,60,90))
+#sum of all elements
+a=70
+b=90
+print("add:",a+b)
+#sort
+a=[1,2,3,4,5]
+a.sort()
+print("Ascending order",a)
+print("Descending order",a)
+#uppercase
+a="python"
+print(a.upper())
+print(a.lower())
+#no.of vowels using count
+a = "python"
+vowels = a.count("a") + a.count("e") + a.count("i") + a.count("o") + a.count("u")
+print("Number of vowels:", vowels)
+##User defined functions
+#Add two numbers
+def add():
+    a=19
+    b=27
+    print("add:",a+b)
+add()
+#Area of rectangle
+def multi():
+    l=5600
+    b=6000
+    print("multi:",l*b)
+multi()
+#Even or Odd
+def check(n):
+    if n%2==0:
+        print(n,"is Even")
+    else:
+        print(n,"is Odd")
+check(25)
+check(30)
+#Largest of 3 numbers
+def largest ():
+    print(max(45,67,89))
+largest()
+#Simple interest
+def si (p,n,r):
+    si=(p*n*r)/100
+p = int(input("Enter principal amount: "))
+r = int(input("Enter rate of interest: "))
+n = int(input("Enter time in years: "))
+
+print("SI",si(p,n,r))
+si()
+#person eligible to vote
+def voting(age):
+    if age >= 18:
+        print("Eligible to vote")
+    else:
+        print("Not eligible to vote")
+age = int(input("Enter your age: "))
+voting(age)
+#factorial of a number
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact = fact * i
+    return fact
+a = int(input("Enter a number: "))
+print("Factorial:", factorial(a))
+#prime number
+def prime(n):
+    if n>1:
+       for i in range(2,n):
+           if n%i==0:
+              print("Number is  not a prime number")
+              break
+           else:
+              print("Number is prime")
+a=int(input("Enter no:"))
+prime(a)
+#reverse
+def reverse():
+    a="blue"
+    print(a[::-1])
+reverse()
+#palindrome
+def palindrome():
+    a=int(input("enter a:"))
+    b=0
+    t=a
+    while t>0:
+        d=t%10
+        b=(b*10)+d
+        t=t//10
+    print("b:",b)
+    if b==a:
+       print("palindrome")
+    else:
+        print("not a palindrome")
+palindrome()
+##Recursion
+#name 5 times using recursion
+def name (n):
+    if n==0:
+        return
+    print("Badriga")
+    name(n-1)
+name(5)
+#print nos from 1 to 10
+def numbers(n):
+    if n>10:
+        return
+    print(n)
+    numbers(n+1)
+numbers(1)
+#print even numbers from 2 to 20
+def even(n):
+   if n>20:
+       return
+   print(n)
+   even(n+2)
+even(2)
+#odd numbers from 1 to 19
+def odd(n):
+    if n>20:
+        return
+    print(n)
+    odd(n+2)
+odd(1)
+#sum of 1st N natural numbers
+def sum(n):
+    if n == 0:
+        return 0
+    else:
+        return n + sum(n - 1)
+a = int(input("Enter a number: "))
+print("Sum:", sum(a))
+#factorial of number
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+a = int(input("Enter a number: "))
+print("Factorial:", factorial(a))
+#power of a number
+def expo(n):
+         return n**3
+print(expo(2))
+#sum of digits of a number
+def sum_digits(n):
+    if n == 0:
+        return 0
+    else:
+        return n % 10 + sum_digits(n // 10)
+n = int(input("Enter a number: "))
+print("Sum of digits:", sum_digits(n))
+#fibonacci series
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+n = int(input("Enter number of terms: "))
+for i in range(n):
+    print(fibonacci(i), end=" ")
+##lambda functions
+#sum
+a= lambda r,t:r+t
+print(a(r=6 ,t=7))
+#difference
+a=lambda x,y:x-y
+print(a(x=90,y=54))
+#product
+a=lambda x,y:x*y
+print(a(x=90,y=54))
+#square
+a=lambda x:x**2
+print(a(30))
+#cube
+a=lambda x:x**3
+print(a(40))
+#even or odd
+a=lambda x:"even" if x%2==0 else "odd"
+print(a(20))
+print(a(75))
+#largest of 2 nos
+n=lambda a,b:"largest" if a>b else "smallest"
+print(n(a=78,b=45))
+print(n(a=90,b=106))
+#area of rectangle
+area = lambda l, b: l * b
+l = int(input("Enter length: "))
+b = int(input("Enter breadth: "))
+print("Area of rectangle:", area(l, b))
+#simple interest
+SI= lambda p,n,r:(p*n*r)/100
+p=int(input("Enter principal: "))
+n=int(input("Enter no. of years: "))
+r=int(input("Enter rate of interest: "))
+print("SI:",((p*n*r)/100))
+#celsius to fahrenheit
+c = int(input("Enter temperature in Celsius: "))
+f = lambda c: (c * 9/5) + 32
+print("Temperature in Fahrenheit:", f(c))
+##Mapping
+#square
+a=[2,4,5,6,7,8]
+square=list(map(lambda x:x**2,a))
+print(square)
+#cube
+a=[2,4,5,6,7,8]
+cube=list(map(lambda x:x**3,a))
+print(cube)
+#multiply
+a=[2,4,5,6,7,8]
+multiply=list(map(lambda x:x*5,a))
+print(multiply)
+#add
+a=[2,4,5,6,7,8]
+add=list(map(lambda x:x+10,a))
+print(add)
+#uppercase
+a=["jk","viki","rudra","sia"]
+result=list(map(lambda x:x.upper(),a))
+print(result)
+#lowercase
+result=list(map(lambda x:x.lower(),a))
+print(result)
+#integers
+a = ["10", "20", "30", "40"]
+result = list(map(lambda x: int(x), a))
+print(result)
+#c to f
+a = [0, 25, 37, 100]
+result = list(map(lambda c: (c * 9/5) + 32, a))
+print(result)
+#length of word
+a = ["apple", "banana", "cat", "python"]
+result = list(map(lambda x: len(x), a))
+print(result)
+#element
+a = [1, 2, 3, 4]
+b = [10, 20, 30, 40]
+result = list(map(lambda x, y: x + y, a, b))
+print(result)
+##filter
+#even
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+result = list(filter(lambda x: x % 2 == 0, a))
+print(result)
+#odd
+a = [1, 2, 3, 4, 5, 6]
+result = list(filter(lambda x: x % 2 != 0, a))
+print(result)
+#numbers greater than 10
+a = [5, 12, 8, 20, 15]
+result = list(filter(lambda x: x > 10, a))
+print(result)
+#numbers less than 50
+a = [10, 60, 25, 80, 45]
+result = list(filter(lambda x: x < 50, a))
+print(result)
+#positive
+a = [-5, 10, -2, 8, 0, 15]
+result = list(filter(lambda x: x > 0, a))
+print(result)
+#negative
+a = [-5, 10, -2, 8, -15]
+result = list(filter(lambda x: x < 0, a))
+print(result)
+#divisible by 5
+a = [10, 12, 15, 23, 25, 30]
+result = list(filter(lambda x: x % 5 == 0, a))
+print(result)
+#starts with a
+a = ["apple", "banana", "cat", "orange", "grapes"]
+result = list(filter(lambda x: len(x) > 5, a))
+print(result)
+#>5 characters
+a = ["apple", "banana", "cat", "orange", "grapes"]
+result = list(filter(lambda x: len(x) > 5, a))
+print(result)
+#>50 marks
+marks = [45, 78, 90, 32, 55, 49]
+result = list(filter(lambda x: x > 50, marks))
+print(result)
+###challenges
+##1
+def square(n):
+    s = lambda x: x ** 2
+    return s(n)
+print(square(5))
+##2
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+even = list(filter(lambda x: x%2 == 0, a))
+square = list(map(lambda x: x**2, even))
+print(square)
+##3
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+even = list(filter(lambda x: x % 2 == 0, a))
+square = list(map(lambda x: x ** 2, even))
+print(square)
+##4
+def calculate(m1, m2, m3, m4, m5):
+    total = m1 + m2 + m3 + m4 + m5
+    average = total / 5
+    print("Total:", total)
+    print("Average:", average)
+calculate(80, 90, 75, 85, 70)
+##5
+def reverse(s):
+    if s == "":
+        return s
+    else:
+        return reverse(s[1:]) + s[0]
+print(reverse("python"))
+##6
+marks = [95, 82, 67, 45, 30]
+grade = list(map(lambda x: "A" if x >= 90 else "B" if x >= 75 else "C" if x >= 50 else "F", marks))
+print(grade)
+##7
+salary = [20000, 30000, 25000, 40000, 18000]
+result = list(filter(lambda x: x > 25000, salary))
+print(result)
+##8
+students = [("prem", 85), ("jaga", 70), ("Divya", 95), ("Arun", 60)]
+result = sorted(students, key=lambda x: x[1])
+print(result)
+ 
+    
+
+
+
+        
+    
+    
+
+
+
+
+
+
+
+
+
+
+
