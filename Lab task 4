@@ -9,9 +9,8 @@ b=90
 print("add:",a+b)
 #sort
 a=[1,2,3,4,5]
-a.sort()
-print("Ascending order",a)
-print("Descending order",a)
+b = sorted(a)
+print("Sorted list:", b)
 #uppercase
 a="python"
 print(a.upper())
